@@ -14,11 +14,11 @@ const App = () => {
     const [isToggled, setIsToggled] = useState(true);
 
     const [values, setValues] = useState({
-        username: "",
-        email: "",
-        birthday: "",
-        password: "",
-        confirmPassword: "",
+        CardholderName: "",
+        CardNumber: "",
+        ExpDateMM: "",
+        ExpDateYY: "",
+        cvc: "",
     });
 
     const inputs = [
@@ -27,9 +27,9 @@ const App = () => {
             name: 'CardholderName',
             type: 'text',
             placeholder: 'e.g. Jane Appleseed',
-            errorMessage: "Username should be 3-16 characters and shouldn't include any special character!",
+            errorMessage: "Can't be blank",
             label: 'CARDHOLDER NAME',
-            pattern: "^[A-Za-z0-9]{3,16}",
+            pattern: "^[0-9]+[ ][a-zA-Z0-9]{3,16}+",
             required: true,
         },
         {
@@ -38,35 +38,38 @@ const App = () => {
             type: 'text',
             placeholder: 'e.g. 1234 5678 9123 0000',
             errorMessage: "Wrong format, numbers only",
-            label: 'Card Number',
-            pattern: '^[\s0-9]+$',
+            label: 'CARD NUMBER',
+            pattern: "[0-9]*[ ]*[0-9]*[ ]*[0-9]*[ ]*[0-9]*[ ]*",
             required: true,
         },
         {
             id: 3,
-            name: 'birthday',
-            type: 'number',
-            placeholder: 'Birthday',
-            label: 'Birthday'
+            name: 'ExpDateMM',
+            type: 'text',
+            placeholder: 'MM',
+            errorMessage: "Can't be blank and insert only 2 digits",
+            label: 'EXP. DATE (MM)',
+            pattern: "^[0-9]{2}$",
+            required: true,
         },
         {
             id: 4,
-            name: 'password',
-            type: 'number',
-            placeholder: 'Password',
-            errorMessage: "Password should be 8-20 characters and include at least 1 letter, 1 number, and 1 special character!",
-            label: 'Password',
-            pattern: `^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#$%^&*()_+])[A-Za-z0-9][A-Za-z0-9!@#$%^&*()_+]{8,20}$`,
+            name: 'ExpDateYY',
+            type: 'text',
+            placeholder: 'YY',
+            errorMessage: "Can't be blank and insert only 2 digits",
+            label: 'EXP. DATE (YY)',
+            pattern: "^[0-9]{2}$",
             required: true,
         },
         {
             id: 5,
-            name: 'confirmPassword',
-            type: 'number',
-            placeholder: 'ConfirmPassword',
-            errorMessage: "Passwords don't match!",
-            label: 'ConfirmPassword',
-            pattern: values.password,
+            name: 'cvc',
+            type: 'text',
+            placeholder: 'e.g. 123',
+            errorMessage: "Can't be blank and insert only 3 digits",
+            label: 'CVC',
+            pattern: "^[0-9]{3}$",
             required: true,
         }
     ]
@@ -82,13 +85,14 @@ const App = () => {
 
 
     console.log(values)
+
     return (
         <div>
 
 
             <div className="container">
                 <img src={bgDesktop} alt="" className="bg-img" />
-                {/* <img src={bgMobile} alt="" class="bg-img-xs" /> */}
+                <img src={bgMobile} alt="" className="bg-img-xs" />
                 <section className="card-display">
                     <div className="card-front">
                         <img src={bgCardFront} alt="" className="card-front-img" />
@@ -96,9 +100,9 @@ const App = () => {
 
                         <p className="card-number-display">{values.CardNumber}</p>
                         <p className="cardholder-display">{values.CardholderName}</p>
-                        <p className="expiry-month-display">{values.birthday}</p>
-                        <p className="expiry-year-display">/{values.password}</p>
-                        <p className="cvc-display">{values.confirmPassword}</p>
+                        <p className="expiry-month-display">{values.ExpDateMM}</p>
+                        <p className="expiry-year-display">/{values.ExpDateYY}</p>
+                        <p className="cvc-display">{values.cvc}</p>
 
                         <form onSubmit={handleSubmit}>
                             {inputs.map((input) => (

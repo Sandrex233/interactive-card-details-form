@@ -1,26 +1,37 @@
 .formInput {
     display: flex;
     flex-direction: column;
-    width: 280px;
+    margin: 8px;
+    width: 370px;
+
 }
 
 input {
-    padding: 15px;
+    padding: 12px;
+    color: hsl(278, 68%, 11%);
+    font-size: 15px;
+    font-weight: 500;
+    font-family: var(--font-family);
     margin: 10px 0px;
     border-radius: 5px;
     border: 1px solid gray;
 }
 
-label {
-    font-size: 12px;
-    color: gray;
+input::placeholder {
+    color: hsl(279, 6%, 55%);
+    font-family: var(--font-family);
+    font-size: 14px;
+
 }
 
+
+
 span {
-    font-size: 12px;
-    padding: 3px;
-    color: red;
+    font-size: 13px;
+    margin-bottom: 2px;
+    color: hsl(0, 100%, 66%);
     display: none;
+    font-family: var(--font-family);
 }
 
 input:invalid[focused="true"] {
@@ -34,4 +45,134 @@ input[focused="true"] {
 
 input:invalid[focused="true"]~span {
     display: block;
+}
+
+label {
+    color: hsl(278, 68%, 11%);
+
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+
+
+@media only screen and (max-width: 580px) {
+    .formInput {
+        position: absolute;
+        display: flex;
+        flex-direction: row;
+        margin: 8px;
+        width: 300px;
+
+        left: -770px;
+    }
+
+    .formInput:nth-child(1) {
+        position: absolute;
+        display: grid;
+        flex-direction: row;
+        margin: 8px;
+        width: 300px;
+
+
+        left: -770px;
+    }
+
+    .formInput:nth-child(2) {
+        position: absolute;
+        display: grid;
+        flex-direction: row;
+        margin: 8px;
+        width: 300px;
+
+        top: 120px;
+        left: -770px;
+    }
+
+    .formInput:nth-child(3) {
+        position: absolute;
+
+        display: grid;
+        flex-direction: row;
+        margin-top: 20px;
+
+
+
+        top: 220px;
+        left: -770px;
+    }
+
+    .formInput:nth-child(4) {
+        position: absolute;
+        display: grid;
+        flex-direction: row;
+        margin-top: 20px;
+
+
+
+        top: 330px;
+        left: -770px;
+    }
+
+    .formInput:nth-child(5) {
+        position: absolute;
+        display: grid;
+        flex-direction: row;
+        margin: 8px;
+        width: 300px;
+
+        top: 450px;
+        left: -770px;
+    }
+
+    input {
+        padding: 12px;
+        color: hsl(278, 68%, 11%);
+        font-size: 15px;
+        font-weight: 500;
+        font-family: var(--font-family);
+        margin: 10px 0px;
+        border-radius: 5px;
+        border: 1px solid gray;
+    }
+
+    input::placeholder {
+        color: hsl(279, 6%, 55%);
+        font-family: var(--font-family);
+        font-size: 14px;
+
+    }
+
+
+
+    span {
+        font-size: 13px;
+        margin-bottom: 2px;
+        color: hsl(0, 100%, 66%);
+        display: none;
+        font-family: var(--font-family);
+    }
+
+    input:invalid[focused="true"] {
+        border: 1px solid hsl(0, 100%, 66%);
+    }
+
+
+    input[focused="true"] {
+        border: 1px solid hsl(278, 94%, 30%);
+    }
+
+    input:invalid[focused="true"]~span {
+        display: block;
+    }
+
+    label {
+        color: hsl(278, 68%, 11%);
+
+        font-family: var(--font-family);
+        font-weight: 500;
+        font-size: 14px;
+        letter-spacing: 2px;
+    }
 }

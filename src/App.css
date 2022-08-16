@@ -1,6 +1,7 @@
 .attribution {
     font-size: 16px;
     text-align: center;
+
 }
 
 .attribution a {
@@ -11,6 +12,8 @@
     height: 100vh;
 
 }
+
+
 
 .card-front-img {
     position: absolute;
@@ -51,13 +54,16 @@ form {
     display: flex;
     flex-direction: column;
 
-    margin-top: 0em;
+
     top: 300px;
     left: 1000px;
     z-index: 1;
 }
 
+
+
 button {
+    position: relative;
     color: hsl(270, 3%, 87%);
     background-color: hsl(278, 68%, 11%);
     border-radius: 7px;
@@ -65,7 +71,9 @@ button {
     width: 370px;
     font-size: 18px;
     font-family: var(--font-family);
+    margin: 20px;
 
+    left: -12px;
 }
 
 
@@ -73,25 +81,25 @@ button {
 
     position: absolute;
     top: 385px;
-    left: 230px;
+    left: 235px;
     text-transform: uppercase;
     color: hsl(0, 0%, 100%);
     font-family: var(--font-family);
     font-weight: 500;
-    font-size: 15px;
+    font-size: 14px;
     letter-spacing: 2px;
     z-index: 2;
 }
 
 .card-number-display {
     position: absolute;
-    top: 320px;
-    left: 230px;
+    top: 310px;
+    left: 235px;
 
     color: hsl(0, 0%, 100%);
     font-family: var(--font-family);
     font-weight: 500;
-    font-size: 20px;
+    font-size: 25px;
     letter-spacing: 2px;
     z-index: 2;
 }
@@ -99,7 +107,7 @@ button {
 .expiry-month-display {
     position: absolute;
     top: 385px;
-    left: 557px;
+    left: 560px;
 
     color: hsl(0, 0%, 100%);
     font-family: var(--font-family);
@@ -124,13 +132,145 @@ button {
 
 .cvc-display {
     position: absolute;
-    top: 595px;
+    top: 590px;
     left: 650px;
 
     color: hsl(0, 0%, 100%);
     font-family: var(--font-family);
     font-weight: 500;
-    font-size: 15px;
+    font-size: 18px;
     letter-spacing: 2px;
     z-index: 2;
+}
+
+@media only screen and (min-width: 580px) {
+    .bg-img-xs {
+        display: none;
+    }
+
+}
+
+
+@media only screen and (max-width: 580px) {
+    .bg-img-xs {
+
+        position: absolute;
+        left: 200px;
+
+    }
+
+    .attribution {
+        position: absolute;
+        left: 270px;
+    }
+
+    .card-front-img {
+        width: 270px;
+        left: 230px;
+        top: 150px;
+    }
+
+    .card-back-img {
+        width: 270px;
+        left: 290px;
+        top: 66px;
+        z-index: 0;
+    }
+
+    .card-logo {
+        left: 225px;
+        top: 135px;
+        width: 50px;
+    }
+
+    .bg-img {
+        display: none;
+    }
+
+
+
+
+
+
+    button {
+        position: absolute;
+        color: hsl(270, 3%, 87%);
+        background-color: hsl(278, 68%, 11%);
+        border-radius: 7px;
+        height: 50px;
+        width: 300px;
+        font-size: 18px;
+        font-family: var(--font-family);
+        top: 550px;
+        left: -782px;
+
+    }
+
+
+    .cardholder-display {
+
+        position: absolute;
+        left: 250px;
+        top: 260px;
+        text-transform: uppercase;
+        color: hsl(0, 0%, 100%);
+        font-family: var(--font-family);
+        font-weight: 500;
+        font-size: 9px;
+        letter-spacing: 2px;
+        z-index: 2;
+    }
+
+    .card-number-display {
+        position: absolute;
+        left: 250px;
+        top: 210px;
+
+        color: hsl(0, 0%, 100%);
+        font-family: var(--font-family);
+        font-weight: 500;
+        font-size: 17px;
+        letter-spacing: 2px;
+        z-index: 2;
+    }
+
+    .expiry-month-display {
+        position: absolute;
+        left: 433px;
+        top: 260px;
+
+
+        color: hsl(0, 0%, 100%);
+        font-family: var(--font-family);
+        font-weight: 500;
+        font-size: 9px;
+        letter-spacing: 2px;
+        z-index: 2;
+    }
+
+    .expiry-year-display {
+        position: absolute;
+        left: 450px;
+        top: 260px;
+
+        color: hsl(0, 0%, 100%);
+        font-family: var(--font-family);
+        font-weight: 500;
+        font-size: 9px;
+        letter-spacing: 2px;
+        z-index: 2;
+    }
+
+    .cvc-display {
+        position: absolute;
+        left: 500px;
+        top: 120px;
+
+        color: hsl(0, 0%, 100%);
+        font-family: var(--font-family);
+        font-weight: 500;
+        font-size: 12px;
+        letter-spacing: 2px;
+        z-index: 2;
+    }
 }
