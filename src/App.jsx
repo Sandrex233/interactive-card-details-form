@@ -11,7 +11,7 @@ import FormInput from './components/FormInput'
 
 
 const App = () => {
-    const [isToggled, setIsToggled] = useState(true);
+
 
     const [values, setValues] = useState({
         CardholderName: "",
@@ -163,7 +163,7 @@ const App = () => {
             Continue */}
 
             <div className="attribution">
-                Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+                Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
                 Coded by <a href="https://github.com/Sandrex233">Sandrex233</a>.
             </div>
         </div>
